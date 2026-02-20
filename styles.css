@@ -1411,6 +1411,6 @@ transform: translateY(40px);
 
 @media (min-height: 1000px) {
   .hero__right {
-    min-height: 430px;
+    min-height: 500px;
   }
 }
