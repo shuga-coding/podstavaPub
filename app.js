@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
     preloader.addEventListener("transitionend", () => {
       preloader.remove();
     });
-  }, 800);
+  }, 850);
 });
 
 // ===== Анимация fade-up (появление элементов при скролле) =====
