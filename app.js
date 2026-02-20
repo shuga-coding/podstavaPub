@@ -1,3 +1,4 @@
+
 //===== Прелоадер =====
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -184,3 +185,6 @@ const observer = new IntersectionObserver((entries, obs) => {
 });
 
 animatedItems.forEach(item => observer.observe(item));
+
+
+
