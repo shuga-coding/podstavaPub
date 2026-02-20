@@ -562,7 +562,6 @@ section {
   background: var(--color-beige);
   padding: 60px 0 40px 0;
   text-align: center;
-  border-bottom: 1px dashed rgba(90, 15, 20, 0.2);
   z-index: 1;
   
 }
@@ -1302,7 +1301,7 @@ transform: translateY(40px);
 
 .footer__decor--glass {
 
-  top: -15%;
+  top: -12%;
 }
 }
 @media (max-width: 360px) {
