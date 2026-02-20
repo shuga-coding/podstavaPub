@@ -198,7 +198,7 @@ section {
 ===================== */
 
 .header {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   padding: 15px 0;
   position: relative;
   top: 0;
@@ -396,7 +396,7 @@ section {
 ===================== */
 
 .about {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   padding: clamp(45px, 8vh, 70px) 0;
   text-align: center;
   position: relative;
@@ -583,7 +583,13 @@ section {
   margin-top: 2em;
   margin-bottom: 2em;
   min-height: 100%;
+  width: 100%;
 }
+
+.schedule__button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);}
+
 .slider-container{
   display: flex;
   justify-content: center;
@@ -600,7 +606,7 @@ section {
 ===================== */
 
 .footer {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   padding-top: 50px;
   position: relative;
   z-index: 2;
@@ -975,6 +981,22 @@ transform: translateY(40px);
   animation: gentleFloat 4s ease-in-out infinite;
 }
 
+
+#preloader {
+    display: none;
+  }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* =====================
    RESPONSIVE
 ================ы===== */
@@ -1033,7 +1055,7 @@ transform: translateY(40px);
   
   .footer__info {
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
   
   .footer__map {
@@ -1125,6 +1147,46 @@ transform: translateY(40px);
     width: 10px;
     height: 10px;
   }
+
+
+  
+
+/* ПРЕЛОАД */
+
+  #preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* контейнер под анимацию */
+.preloader-inner {
+  width: auto;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* логотип */
+.preloader-logo {
+  width: 100px;
+  height: auto;;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  50%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
 }
 
 @media (max-width: 480px) {
@@ -1138,7 +1200,7 @@ transform: translateY(40px);
   
   .nav__link,
   .nav__link--button {
-    font-size: 13px;
+    font-size: 12px;
     padding: 4px 5px;
   }
   
@@ -1173,6 +1235,9 @@ transform: translateY(40px);
   
   .button {
     width: 100%;
+    min-width: auto;
+  }
+  .schedule__button{
     min-width: auto;
   }
   
@@ -1248,7 +1313,7 @@ transform: translateY(40px);
 @media (max-width: 360px) {
   .nav__link,
   .nav__link--button {
-    font-size: 12px;
+    font-size: 13px;
     padding: 2px 4px;
   }
   
@@ -1289,7 +1354,7 @@ transform: translateY(40px);
   
 
   .about__decor--beer{
-    top: -107px;
+    top: -99px;
   }
   .about__decor--pizza{
     bottom: -103px;

@@ -1,3 +1,28 @@
+//===== Прелоадер =====
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.addEventListener("transitionend", () => {
+      preloader.remove();
+    });
+  }, 800);
+});
+
+// ===== Анимация fade-up (появление элементов при скролле) =====
+  const items = document.querySelectorAll('.fade-up');
+  const obsserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15 // Элемент появляется когда 15% его видно
+  });
+
+  items.forEach(item => obsserver.observe(item));
+
 // ================= HERO SLIDER =================
 
 const slides = document.querySelectorAll('.hero__slide');
